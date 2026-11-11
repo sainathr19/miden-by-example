@@ -18,12 +18,12 @@
 //!
 //! Code to read: `crates/rust-client/src/account/mod.rs`, `add_account`.
 
+use miden_by_example::{data_dir, testnet_client};
 use miden_client::account::component::BasicWallet;
 use miden_client::account::{AccountBuilder, AccountBuilderSchemaCommitmentExt, AccountType};
 use miden_client::address::NetworkId;
 use miden_client::auth::{Approver, AuthSchemeId, AuthSecretKey, AuthSingleSig};
 use miden_client::keystore::Keystore;
-use miden_by_example::{data_dir, testnet_client};
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {

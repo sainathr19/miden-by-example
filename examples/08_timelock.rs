@@ -33,15 +33,15 @@
 
 use std::time::Duration;
 
+use miden_by_example::{
+    TestnetClient, bob_data_dir, fee_token, new_wallet, parse_account_id, richest_account,
+    testnet_client, testnet_client_at, token_balance, wait_for_commit, wait_until_block,
+};
 use miden_client::account::{AccountId, AccountType};
 use miden_client::asset::FungibleAsset;
 use miden_client::block::BlockNumber;
 use miden_client::note::{Note, NoteConsumptionStatus, NoteFile, NoteId, NoteType};
 use miden_client::transaction::{PaymentNoteDescription, TransactionRequestBuilder};
-use miden_by_example::{
-    TestnetClient, bob_data_dir, fee_token, new_wallet, parse_account_id, richest_account,
-    testnet_client, testnet_client_at, token_balance, wait_for_commit, wait_until_block,
-};
 
 /// 0.1 token per note. Small, but far more than the fee (~120) the receiver pays to consume it.
 const AMOUNT: u64 = 100_000;

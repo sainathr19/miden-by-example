@@ -23,13 +23,13 @@
 
 use std::collections::BTreeSet;
 
+use miden_by_example::{fee_token, parse_account_id, richest_account, testnet_client};
 use miden_client::account::AccountId;
 use miden_client::block::BlockNumber;
 use miden_client::note::NoteType;
 use miden_client::rpc::domain::note::FetchedNote;
 use miden_client::rpc::{Endpoint, GrpcClient, NodeRpcClient};
 use miden_client::store::{InputNoteState, NoteFilter};
-use miden_by_example::{fee_token, parse_account_id, richest_account, testnet_client};
 
 /// How far back to look, in blocks. Blocks come about every 3 seconds, so this is about 2 days.
 const LOOKBACK: u32 = 60_000;

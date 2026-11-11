@@ -35,15 +35,15 @@
 use std::time::{Duration, Instant};
 
 use anyhow::Context;
+use miden_by_example::{
+    bob_data_dir, fee_token, new_wallet, parse_account_id, richest_account, testnet_client,
+    testnet_client_at, token_balance, wait_for_commit, wait_for_consumable_notes,
+};
 use miden_client::account::AccountType;
 use miden_client::address::{Address, NetworkId};
 use miden_client::asset::FungibleAsset;
 use miden_client::note::{Note, NoteType};
 use miden_client::transaction::{PaymentNoteDescription, TransactionRequestBuilder};
-use miden_by_example::{
-    bob_data_dir, fee_token, new_wallet, parse_account_id, richest_account, testnet_client,
-    testnet_client_at, token_balance, wait_for_commit, wait_for_consumable_notes,
-};
 
 /// One token: the fee token has 6 decimals.
 const AMOUNT: u64 = 1_000_000;

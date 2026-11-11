@@ -35,10 +35,10 @@
 
 use std::collections::BTreeMap;
 
+use miden_by_example::{fee_token, pick_account, richest_account, testnet_client};
 use miden_client::account::AccountId;
 use miden_client::transaction::{RawOutputNote, TransactionRequestBuilder};
 use miden_client::vm::AdviceInputs;
-use miden_by_example::{fee_token, pick_account, richest_account, testnet_client};
 
 /// Part A. The stack is a list of field elements; the left end is the top.
 /// A transaction script starts with 16 elements on the stack: its argument word plus padding.

@@ -36,15 +36,15 @@
 use std::time::{Duration, Instant};
 
 use anyhow::{Context, bail};
+use miden_by_example::{
+    TestnetClient, bob_data_dir, fee_token, richest_account, testnet_client, testnet_client_at,
+    token_balance, wait_for_commit, wait_for_consumable_notes,
+};
 use miden_client::account::AccountId;
 use miden_client::asset::FungibleAsset;
 use miden_client::note::{Note, NoteType};
 use miden_client::store::NoteFilter;
 use miden_client::transaction::{SwapTransactionData, TransactionRequestBuilder};
-use miden_by_example::{
-    TestnetClient, bob_data_dir, fee_token, richest_account, testnet_client, testnet_client_at,
-    token_balance, wait_for_commit, wait_for_consumable_notes,
-};
 
 /// 10 PLAY (6 decimals).
 const OFFER: u64 = 10_000_000;

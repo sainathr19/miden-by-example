@@ -2,8 +2,8 @@
 //!
 //! Run: `cargo run --release --example 00_network_info`
 
-use miden_client::address::NetworkId;
 use miden_by_example::testnet_client;
+use miden_client::address::NetworkId;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {

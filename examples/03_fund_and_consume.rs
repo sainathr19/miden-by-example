@@ -27,11 +27,11 @@
 use std::time::{Duration, Instant};
 
 use anyhow::bail;
+use miden_by_example::{fee_token, pick_account, testnet_client};
 use miden_client::address::NetworkId;
 use miden_client::note::{Note, NoteConsumptionStatus};
 use miden_client::store::TransactionFilter;
 use miden_client::transaction::{TransactionRequestBuilder, TransactionStatus};
-use miden_by_example::{fee_token, pick_account, testnet_client};
 
 const POLL_EVERY: Duration = Duration::from_secs(5);
 const WAIT_FOR_NOTE: Duration = Duration::from_secs(10 * 60);

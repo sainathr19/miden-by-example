@@ -38,6 +38,10 @@
 use std::path::PathBuf;
 use std::time::Duration;
 
+use miden_by_example::{
+    fee_token, new_wallet_with_key, parse_account_id, richest_account, testnet_client,
+    testnet_client_at, token_balance, wait_for_commit, wait_for_consumable_notes,
+};
 use miden_client::account::{AccountFile, AccountType};
 use miden_client::asset::FungibleAsset;
 use miden_client::keystore::Keystore;
@@ -45,10 +49,6 @@ use miden_client::note::{Note, NoteType};
 use miden_client::rpc::domain::account::GetAccountRequest;
 use miden_client::rpc::{Endpoint, GrpcClient, NodeRpcClient};
 use miden_client::transaction::{PaymentNoteDescription, TransactionRequestBuilder};
-use miden_by_example::{
-    fee_token, new_wallet_with_key, parse_account_id, richest_account, testnet_client,
-    testnet_client_at, token_balance, wait_for_commit, wait_for_consumable_notes,
-};
 
 const AMOUNT: u64 = 2_000_000;
 const TIMEOUT: Duration = Duration::from_secs(3 * 60);

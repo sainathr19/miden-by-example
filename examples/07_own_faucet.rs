@@ -30,6 +30,10 @@
 
 use std::time::Duration;
 
+use miden_by_example::{
+    fee_token, parse_account_id, richest_account, testnet_client, token_balance, wait_for_commit,
+    wait_for_consumable_notes,
+};
 use miden_client::account::component::{
     BasicWallet, BurnPolicy, FungibleFaucet, MintPolicy, TokenName, TokenPolicyManager,
 };
@@ -40,10 +44,6 @@ use miden_client::auth::{Approver, AuthSchemeId, AuthSecretKey, AuthSingleSig};
 use miden_client::keystore::Keystore;
 use miden_client::note::{Note, NoteType};
 use miden_client::transaction::{PaymentNoteDescription, TransactionRequestBuilder};
-use miden_by_example::{
-    fee_token, parse_account_id, richest_account, testnet_client, token_balance, wait_for_commit,
-    wait_for_consumable_notes,
-};
 
 const SYMBOL: &str = "PLAY";
 const NAME: &str = "Playground Token";
