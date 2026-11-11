@@ -1,0 +1,15 @@
+[package]
+name = "miden-by-example"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.98.1"
+description = "Runnable Rust examples for the Miden rollup: accounts, notes, private transfers, faucets, timelocks, swaps, MASM and raw RPC on testnet"
+license = "MIT"
+publish = false
+
+[dependencies]
+anyhow = "1"
+miden-client = { version = "0.18", features = ["tonic"] }
+miden-client-sqlite-store = "0.18"
+rand = "0.9"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time"] }

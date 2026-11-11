@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Installs the toolchain and components pinned in rust-toolchain.toml, and caches builds.
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - run: cargo fmt --check
+      - run: cargo clippy --release --all-targets --locked -- -D warnings
